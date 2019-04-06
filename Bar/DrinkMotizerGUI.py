@@ -6,11 +6,10 @@
 //'''
 
 #! /usr/bin/python
-import time
-import threading
-from tkinter import *
-from tkinter import messagebox
-from tkinter import ttk
+import time, threading
+from Tkinter import *
+import tkMessageBox
+import ttk
 import RPi.GPIO as GPIO
 
 # Bottle order is Rum, Vodka, Orange Juice, Club Soda, Coke
@@ -79,7 +78,7 @@ def ButtonPress():
 
 def MakeDrink(B1,B2,B3,B4,B5):
     timing=(B1,B2,B3,B4,B5)
-    print (timing)
+    print timing
     i=0
     for x in range(0,5):
         if timing[i] != 0:
@@ -91,7 +90,7 @@ def MakeDrink(B1,B2,B3,B4,B5):
     
 
 def Stop(bottle):
-    print (bottle)
+    print bottle
     GPIO.output(bottle, False)
      
 def Caipi():
