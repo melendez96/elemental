@@ -28,14 +28,14 @@ for x in range(0,5):
 #GUI Window Setup
 
 #Sets main window size
-dgui.title("PiBartendo")
+dgui.title("Elemental")
 dgui.attributes('-fullscreen', False)
 dgui.geometry('1024x650+100+50')
 
 
 labelfont = ('times', 28, 'bold', 'italic')
 selectfont = ('times', 10, 'italic')
-widget = Label(dgui, text='PiBartendo')
+widget = Label(dgui, text='Elemental')
 widget.config(font=labelfont)           
 widget.config(height=3, width=20)       
 widget.pack(expand=YES, fill=BOTH)
