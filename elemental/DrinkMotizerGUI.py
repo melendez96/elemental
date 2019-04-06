@@ -1,9 +1,3 @@
-'''
-//Created on Nov 17, 2013
-//
-//@author: Cabe Atwell, Joe Deppong, Brenn Freebury
-//All rights reserved. (c) 2014 "the big C"
-//'''
 
 #! /usr/bin/python
 import time, threading
@@ -94,7 +88,7 @@ def Stop(bottle):
     GPIO.output(bottle, False)
      
 def Caipi():
-    if tkMessageBox.askokcancel("Caipirinha","Place 4 lime wedges and 1 sugar packets in glass and muddle. Click OK when the glass is under the tap"):
+    if tkMessageBox.askokcancel("Tequila Sunrise","Place 4 lime wedges and 1 sugar packets in glass and muddle. Click OK when the glass is under the tap"):
         MakeDrink(3.5,0,0,0,0)
 
 def SD():
@@ -134,7 +128,7 @@ def Cola():
         MakeDrink(0,0,0,0,14)
 
 def OJ():
-    if tkMessageBox.askokcancel("Organe Juice",basicMessage):
+    if tkMessageBox.askokcancel("Orange Juice",basicMessage):
         MakeDrink(0,0,14,0,0)
 
     
@@ -144,7 +138,7 @@ def OJ():
 Caipib=Button(menuframe, justify = CENTER, bd=3,command=Caipi)
 Caipipic = PhotoImage(file="teqsunrise.gif")
 Caipib.config(image=Caipipic,width="130",height="130",compound=CENTER)
-Caipib.config(text="Caipirinha", font=Drinkfont)
+Caipib.config(text="Tequila Sunrise", font=Drinkfont)
 Caipib.grid(row=0, column=0, padx=5, pady=5)
 Caipiingred = Label(menuframe,text='Rum, Lime and Sugar',bg="white").grid(row=1, column=0)
 
@@ -162,7 +156,7 @@ SDingred = Label(menuframe,text='Vodka & Orange Juice',bg="white").grid(row=1, c
 RCb=Button(menuframe, justify = CENTER, bd=3,command=ButtonPress, height=200)
 RCpic = PhotoImage(file="whiterussian.gif")
 RCb.config(image=RCpic,width="130",height="130",compound=CENTER)
-RCb.config(text="Caipiroska", font=Drinkfont)
+RCb.config(text="White Russian", font=Drinkfont)
 RCb.grid(row=0, column=2, padx=5, pady=5)
 RCingred = Label(menuframe,text='Vodka, Kaluha, Milk',bg="white").grid(row=1, column=2)
 
