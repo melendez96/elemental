@@ -25,22 +25,21 @@ for x in range(0,5):
 dgui.title("Elemental")
 dgui.attributes('-fullscreen', False)
 dgui.geometry('1024x650+100+50')
+dgui.configure(background='black')
 
 
-labelfont = ('times', 28, 'bold', 'italic')
+labelfont = ('times', 28, 'bold')
 selectfont = ('times', 10, 'italic')
 widget = Label(dgui, text='Elemental')
 widget.config(font=labelfont)           
 widget.config(height=3, width=20)       
 widget.pack(expand=YES, fill=BOTH)
-widget.place(x=-20,y=-42)
+widget.place(x=310,y=-42)
+widget.configure(background='black',foreground='white')
 
-subwidget = Label(dgui, text='Select Drink:')
-subwidget.config(font=selectfont)
-subwidget.place(x=290,y=31)
 
 #Sets the size and position of the white background
-menuframe = Canvas(dgui, width=550, height=800, bd=2, bg="white", relief=SUNKEN)
+menuframe = Canvas(dgui, width=550, height=800, bd=2, bg="black", relief=SUNKEN)
 menuframe.pack(pady=(50,10), ipady=5, ipadx=0)
 
 #Progress Bar
@@ -140,7 +139,7 @@ Caipipic = PhotoImage(file="teqsunrise.gif")
 Caipib.config(image=Caipipic,width="130",height="130",compound=CENTER)
 Caipib.config(text="Tequila Sunrise", font=Drinkfont)
 Caipib.grid(row=0, column=0, padx=5, pady=5)
-Caipiingred = Label(menuframe,text='Rum, Lime and Sugar',bg="white").grid(row=1, column=0)
+Caipiingred = Label(menuframe,text='Rum, Lime and Sugar',bg="black", fg='white').grid(row=1, column=0)
 
 #SD Button
 
@@ -149,7 +148,7 @@ SDpic = PhotoImage(file="screwdriver.gif")
 SDb.config(image=SDpic, width="130",height="130",compound=CENTER)
 SDb.config(text="Screwdriver", font=Drinkfont)
 SDb.grid(row=0, column=1, padx=5, pady=5)
-SDingred = Label(menuframe,text='Vodka & Orange Juice',bg="white").grid(row=1, column=1)
+SDingred = Label(menuframe,text='Vodka & Orange Juice',bg="black", fg='white').grid(row=1, column=1)
 
 #Caipiroska button 
 
@@ -158,7 +157,7 @@ RCpic = PhotoImage(file="whiterussian.gif")
 RCb.config(image=RCpic,width="130",height="130",compound=CENTER)
 RCb.config(text="White Russian", font=Drinkfont)
 RCb.grid(row=0, column=2, padx=5, pady=5)
-RCingred = Label(menuframe,text='Vodka, Kaluha, Milk',bg="white").grid(row=1, column=2)
+RCingred = Label(menuframe,text='Vodka, Kaluha, Milk',bg="black", fg='white').grid(row=1, column=2)
 
 #Rum and Coke Button
 
@@ -167,7 +166,7 @@ WCpic = PhotoImage(file="whiskeycoke.gif")
 WCb.config(image=WCpic,width="130",height="130",compound=CENTER)
 WCb.config(text="Rum & Coke", font=Drinkfont)
 WCb.grid(row=0,  column=3, padx=5, pady=5)
-WCingred = Label(menuframe,text='Rum & Coke',bg="white").grid(row=1, column=3)
+WCingred = Label(menuframe,text='Rum & Coke',bg="black", fg='white').grid(row=1, column=3)
 
 #VS Button
 
@@ -176,7 +175,7 @@ VSpic = PhotoImage(file="vodkasprite.gif")
 VSb.config(image=VSpic,width="130",height="130",compound=CENTER)
 VSb.config(text="Vodka Tonic", font=Drinkfont)
 VSb.grid(row=2, column=0, padx=5, pady=5)
-VSingred = Label(menuframe,text='Vodka & Club Soda',bg="white").grid(row=3, column=0)
+VSingred = Label(menuframe,text='Vodka & Club Soda',bg="black", fg='white').grid(row=3, column=0)
 
 #GT Button
 
@@ -185,7 +184,7 @@ GTpic = PhotoImage(file="gintonic.gif")
 GTb.config(image=GTpic,width="130",height="130",compound=CENTER)
 GTb.config(text="Mojito", font=Drinkfont)
 GTb.grid(row=2, column=1, padx=5, pady=5)
-GTingred = Label(menuframe,text='Gin & Tonic Water',bg="white").grid(row=3, column=1)
+GTingred = Label(menuframe,text='Gin & Tonic Water',bg="black", fg='white').grid(row=3, column=1)
 
 #Cuba Libre Button
 
@@ -194,7 +193,7 @@ CLpic = PhotoImage(file="longisland.gif")
 CLb.config(image=CLpic,width="130",height="130",compound=CENTER)
 CLb.config(text="Cuba Libre", font=Drinkfont)
 CLb.grid(row=2, column=2, padx=5, pady=5)
-CLingred = Label(menuframe,text='Rum, Coke & Lime',bg="white").grid(row=3, column=2)
+CLingred = Label(menuframe,text='Rum, Coke & Lime',bg="black", fg='white').grid(row=3, column=2)
 
 #VR Button
 
@@ -203,7 +202,7 @@ VRpic = PhotoImage(file="vodkaRedbull.gif")
 VRb.config(image=VRpic,width="130",height="130",compound=CENTER)
 VRb.config(text="Vodka Gimlet", font=Drinkfont)
 VRb.grid(row=2, column=3, padx=5, pady=5)
-VRingred = Label(menuframe,text='Vodka & Redbull',bg="white").grid(row=3, column=3)
+VRingred = Label(menuframe,text='Vodka & Redbull',bg="black", fg='white').grid(row=3, column=3)
 
 #MH Button
 
@@ -212,7 +211,7 @@ MHpic = PhotoImage(file="Manhattan.gif")
 MHb.config(image=MHpic,width="130",height="130",compound=CENTER)
 MHb.config(text="Vodka Shot", font=Drinkfont)
 MHb.grid(row=4, column=0, padx=5, pady=5)
-MHingred = Label(menuframe,text='Vodka',bg="white").grid(row=5,column=0)
+MHingred = Label(menuframe,text='Vodka',bg="black", fg='white').grid(row=5,column=0)
 
 #CM Button
 
@@ -221,7 +220,7 @@ CMpic = PhotoImage(file="Cosmo.gif")
 CMb.config(image=CMpic,width="130",height="130",compound=CENTER)
 CMb.config(text="Rum Shot", font=Drinkfont)
 CMb.grid(row=4, column=1, padx=5, pady=5)
-CMingred = Label(menuframe,text='Rum',bg="white").grid(row=5, column=1)
+CMingred = Label(menuframe,text='Rum',bg="black", fg='white').grid(row=5, column=1)
 
 #CM Button
 
@@ -230,7 +229,7 @@ Colapic = PhotoImage(file="Cosmo.gif")
 Colab.config(image=Colapic,width="130",height="130",compound=CENTER)
 Colab.config(text="Cola", font=Drinkfont)
 Colab.grid(row=4, column=2, padx=5, pady=5)
-Colaingred = Label(menuframe,text='Rum',bg="white").grid(row=5, column=2)
+Colaingred = Label(menuframe,text='Coquita',bg="black", fg='white').grid(row=5, column=2)
 
 #CM Button
 
@@ -239,11 +238,9 @@ OJpic = PhotoImage(file="Cosmo.gif")
 OJb.config(image=OJpic,width="130",height="130",compound=CENTER)
 OJb.config(text="Orange Juice", font=Drinkfont)
 OJb.grid(row=4, column=3, padx=5, pady=5)
-OJingred = Label(menuframe,text='Rum',bg="white").grid(row=5, column=3)
+OJingred = Label(menuframe,text='Orange Juice',bg="black", fg='white').grid(row=5, column=3)
 
-
-
-settingsbutton = Button(text = 'Settings', height=2, width=10, command = settingsmenu). place(x=660,y=6)
-exitbutton = Button(text='Quit', height=2, width=10, command=Quit).place(x=500,y=6)
+settingsbutton = Button(text = 'Settings', height=2, width=10, command = settingsmenu).place(x=900,y=14)
+exitbutton = Button(text='Quit', height=2, width=10, command=Quit).place(x=900,y=588)
 
 dgui.mainloop()
