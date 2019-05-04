@@ -33,10 +33,16 @@ class Bartender():
         def readPumpConfiguration():
                 return json.load(open('pump_config.json'))
 
-        def menuItemClicked(self, menuItem):
-                if (menuItem == "drink"):
-                        self.makeDrink('Rum & Coke', drink_list[0]['ingredients'])
-                        return True
+        def menuItemClicked(self, drink_name):
+                index = 0
+                count = 0
+                for d in drink_list:
+                        if (d['name'] == drink_name):
+                                index = count
+                        count = count + 1
+                                
+                self.makeDrink(drink_name, drink_list[index]['ingredients'])
+                return True
         
         def pour(self, pin, waitTime):
                 GPIO.output(pin, GPIO.LOW)
@@ -148,13 +154,11 @@ def SD():
         
 
 def RumCoke():
-    if tkMessageBox.askokcancel("Rum and Coke",basicMessage):
-            bartender.menuItemClicked('drink')
+        bartender.menuItemClicked('Rum & Coke')
         
 
 def VodkaTonic():
-    if tkMessageBox.askokcancel("Vodka and Tonic",basicMessage):
-            bartender.menuItemClicked('drink')
+        bartender.menuItemClicked('Gin & Juice')
         
 
 def Mojito():

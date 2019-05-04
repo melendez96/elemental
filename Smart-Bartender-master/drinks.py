@@ -1,12 +1,10 @@
-# drinks.py
+## drinks.py
 drink_list = [
 	{
 		"name": "Rum & Coke",
 		"ingredients": {
 			"rum": 50,
-			"coke": 150,
-			"gin": 20,
-			"oj": 30                    
+			"coke": 70                    
 		}
 	}, {
 		"name": "Gin & Tonic",
@@ -39,8 +37,8 @@ drink_list = [
 	}, {
 		"name": "Gin & Juice",
 		"ingredients": {
-			"gin": 50,
-			"oj": 150
+			"gin": 5,
+			"oj": 30
 		}
 	}, {
 		"name": "Tequila Sunrise",
