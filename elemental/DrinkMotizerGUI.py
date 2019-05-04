@@ -22,9 +22,9 @@ for x in range(0,5):
 #GUI Window Setup
 
 #Sets main window size
-dgui.title("Elemental")
+dgui.title("")
 dgui.attributes('-fullscreen', False)
-dgui.geometry('1024x650+100+50')
+dgui.geometry('650x650+100+50')
 dgui.configure(background='black')
 
 
@@ -38,14 +38,14 @@ widget.place(x=310,y=-42)
 widget.configure(background='black',foreground='white')
 
 
-#Sets the size and position of the white background
+#Sets the size and position of the black background
 menuframe = Canvas(dgui, width=550, height=800, bd=2, bg="black", relief=SUNKEN)
 menuframe.pack(pady=(50,10), ipady=5, ipadx=0)
 
 #Progress Bar
 separator = Frame(dgui, height=30, width=800, bd=1)
 separator.pack(padx=0, pady=4)
-progressbarlabel = Label(separator, text='Drink Progress').pack(side="left")
+progressbarlabel = Label(separator, text='No comas ancias').pack(side="left")
 progressbar = ttk.Progressbar(separator, orient=HORIZONTAL, length=400, mode='determinate')
 progressbar.pack(side="left",padx=0, pady=0)
 
@@ -54,13 +54,14 @@ def settingsmenu():
      smenu = Toplevel()
      smenu.title('Settings')
      smenu.geometry('600x400+300+100')
-     #smenu.iconbitmap(bitmap='Drink.ico')
+     smenu.iconbitmap(bitmap='Drink.ico')
      
 #Main
 Drinkfont = ('times', 12, 'bold', 'italic')
 ingredfont = ('times', 9)
 
-basicMessage="Click OK when the glass is under the tap"
+basicMessage="Coloque un vaso, despues precione OK"
+mojitoMessage="En el vaso, coloque 10 hojas de menta, 4 rodajas de limon ademas de 2 paquetes de azucar  hielo al gusto"
 
 def Quit():
     GPIO.cleanup()
@@ -87,8 +88,9 @@ def Stop(bottle):
     GPIO.output(bottle, False)
      
 def Caipi():
-    if tkMessageBox.askokcancel("Tequila Sunrise","Place 4 lime wedges and 1 sugar packets in glass and muddle. Click OK when the glass is under the tap"):
+    if tkMessageBox.askokcancel("Tequila Sunrise","Coloque 4 rodajas de limon ademas de un paquete de azucar en el vaso y mezcle"):
         MakeDrink(3.5,0,0,0,0)
+        tkMessageBox.configure(background='black')
 
 def SD():
     if tkMessageBox.askokcancel("Screwdriver",basicMessage):
@@ -103,7 +105,7 @@ def VodkaTonic():
         MakeDrink(1,1,1,1,1)
 
 def Mojito():
-    if tkMessageBox.askokcancel("Mojito",basicMessage):
+    if tkMessageBox.askokcancel("Mojito",mojitoMessage):
         MakeDrink(0,0,0,0,0)
 
 def CubaLibre():
@@ -137,54 +139,54 @@ def OJ():
 Caipib=Button(menuframe, justify = CENTER, bd=3,command=Caipi)
 Caipipic = PhotoImage(file="teqsunrise.gif")
 Caipib.config(image=Caipipic,width="130",height="130",compound=CENTER)
-Caipib.config(text="Tequila Sunrise", font=Drinkfont)
+Caipib.config(text="Acapulqueando", font=Drinkfont)
 Caipib.grid(row=0, column=0, padx=5, pady=5)
-Caipiingred = Label(menuframe,text='Rum, Lime and Sugar',bg="black", fg='white').grid(row=1, column=0)
+Caipiingred = Label(menuframe,text='Ron, limon & azucar',bg="black", fg='white').grid(row=1, column=0)
 
 #SD Button
 
 SDb=Button(menuframe, justify = CENTER, bd=3,command=SD)
 SDpic = PhotoImage(file="screwdriver.gif")
 SDb.config(image=SDpic, width="130",height="130",compound=CENTER)
-SDb.config(text="Screwdriver", font=Drinkfont)
+SDb.config(text="Destornilladora", font=Drinkfont)
 SDb.grid(row=0, column=1, padx=5, pady=5)
-SDingred = Label(menuframe,text='Vodka & Orange Juice',bg="black", fg='white').grid(row=1, column=1)
+SDingred = Label(menuframe,text='Vodka & Jugo de Naranja',bg="black", fg='white').grid(row=1, column=1)
 
 #Caipiroska button 
 
 RCb=Button(menuframe, justify = CENTER, bd=3,command=ButtonPress, height=200)
 RCpic = PhotoImage(file="whiterussian.gif")
 RCb.config(image=RCpic,width="130",height="130",compound=CENTER)
-RCb.config(text="White Russian", font=Drinkfont)
+RCb.config(text="Ruso Nevadon", font=Drinkfont)
 RCb.grid(row=0, column=2, padx=5, pady=5)
-RCingred = Label(menuframe,text='Vodka, Kaluha, Milk',bg="black", fg='white').grid(row=1, column=2)
+RCingred = Label(menuframe,text='Vodka, Kaluha & Leche',bg="black", fg='white').grid(row=1, column=2)
 
 #Rum and Coke Button
 
 WCb=Button(menuframe, justify = CENTER, bd=3,command=RumCoke)
 WCpic = PhotoImage(file="whiskeycoke.gif")
 WCb.config(image=WCpic,width="130",height="130",compound=CENTER)
-WCb.config(text="Rum & Coke", font=Drinkfont)
+WCb.config(text="Ron con Coquita", font=Drinkfont)
 WCb.grid(row=0,  column=3, padx=5, pady=5)
-WCingred = Label(menuframe,text='Rum & Coke',bg="black", fg='white').grid(row=1, column=3)
+WCingred = Label(menuframe,text='Ron & Cola',bg="black", fg='white').grid(row=1, column=3)
 
 #VS Button
 
 VSb=Button(menuframe, justify = CENTER, bd=3,command=VodkaTonic)
 VSpic = PhotoImage(file="vodkasprite.gif")
 VSb.config(image=VSpic,width="130",height="130",compound=CENTER)
-VSb.config(text="Vodka Tonic", font=Drinkfont)
+VSb.config(text="Vodka burbujeante", font=Drinkfont)
 VSb.grid(row=2, column=0, padx=5, pady=5)
-VSingred = Label(menuframe,text='Vodka & Club Soda',bg="black", fg='white').grid(row=3, column=0)
+VSingred = Label(menuframe,text='Vodka & Agua Mineral',bg="black", fg='white').grid(row=3, column=0)
 
 #GT Button
 
 GTb=Button(menuframe, justify = CENTER, bd=3,command=ButtonPress)
 GTpic = PhotoImage(file="gintonic.gif")
 GTb.config(image=GTpic,width="130",height="130",compound=CENTER)
-GTb.config(text="Mojito", font=Drinkfont)
+GTb.config(text="Ajas Mojito!", font=Drinkfont)
 GTb.grid(row=2, column=1, padx=5, pady=5)
-GTingred = Label(menuframe,text='Gin & Tonic Water',bg="black", fg='white').grid(row=3, column=1)
+GTingred = Label(menuframe,text='Ginebra & Agua Tonica',bg="black", fg='white').grid(row=3, column=1)
 
 #Cuba Libre Button
 
@@ -193,14 +195,14 @@ CLpic = PhotoImage(file="longisland.gif")
 CLb.config(image=CLpic,width="130",height="130",compound=CENTER)
 CLb.config(text="Cuba Libre", font=Drinkfont)
 CLb.grid(row=2, column=2, padx=5, pady=5)
-CLingred = Label(menuframe,text='Rum, Coke & Lime',bg="black", fg='white').grid(row=3, column=2)
+CLingred = Label(menuframe,text='Ron, Cola & Limon',bg="black", fg='white').grid(row=3, column=2)
 
 #VR Button
 
 VRb=Button(menuframe, justify = CENTER, bd=3,command=ButtonPress)
 VRpic = PhotoImage(file="vodkaRedbull.gif")
 VRb.config(image=VRpic,width="130",height="130",compound=CENTER)
-VRb.config(text="Vodka Gimlet", font=Drinkfont)
+VRb.config(text="Vodka Volador", font=Drinkfont)
 VRb.grid(row=2, column=3, padx=5, pady=5)
 VRingred = Label(menuframe,text='Vodka & Redbull',bg="black", fg='white').grid(row=3, column=3)
 
@@ -209,7 +211,7 @@ VRingred = Label(menuframe,text='Vodka & Redbull',bg="black", fg='white').grid(r
 MHb=Button(menuframe, justify = CENTER, bd=3,command=VodkaShot)
 MHpic = PhotoImage(file="Manhattan.gif")
 MHb.config(image=MHpic,width="130",height="130",compound=CENTER)
-MHb.config(text="Vodka Shot", font=Drinkfont)
+MHb.config(text="EL Shot", font=Drinkfont)
 MHb.grid(row=4, column=0, padx=5, pady=5)
 MHingred = Label(menuframe,text='Vodka',bg="black", fg='white').grid(row=5,column=0)
 
@@ -218,29 +220,29 @@ MHingred = Label(menuframe,text='Vodka',bg="black", fg='white').grid(row=5,colum
 CMb=Button(menuframe, justify = CENTER, bd=3,command=RumShot)
 CMpic = PhotoImage(file="Cosmo.gif")
 CMb.config(image=CMpic,width="130",height="130",compound=CENTER)
-CMb.config(text="Rum Shot", font=Drinkfont)
+CMb.config(text="Bebida de Pirata", font=Drinkfont)
 CMb.grid(row=4, column=1, padx=5, pady=5)
-CMingred = Label(menuframe,text='Rum',bg="black", fg='white').grid(row=5, column=1)
+CMingred = Label(menuframe,text='Ron',bg="black", fg='white').grid(row=5, column=1)
 
 #CM Button
 
 Colab=Button(menuframe, justify = CENTER, bd=3,command=Cola)
 Colapic = PhotoImage(file="Cosmo.gif")
 Colab.config(image=Colapic,width="130",height="130",compound=CENTER)
-Colab.config(text="Cola", font=Drinkfont)
+Colab.config(text="Coquita", font=Drinkfont)
 Colab.grid(row=4, column=2, padx=5, pady=5)
-Colaingred = Label(menuframe,text='Coquita',bg="black", fg='white').grid(row=5, column=2)
+Colaingred = Label(menuframe,text='Cola',bg="black", fg='white').grid(row=5, column=2)
 
 #CM Button
 
 OJb=Button(menuframe, justify = CENTER, bd=3,command=OJ)
 OJpic = PhotoImage(file="Cosmo.gif")
 OJb.config(image=OJpic,width="130",height="130",compound=CENTER)
-OJb.config(text="Orange Juice", font=Drinkfont)
+OJb.config(text="Pa' los peques", font=Drinkfont)
 OJb.grid(row=4, column=3, padx=5, pady=5)
-OJingred = Label(menuframe,text='Orange Juice',bg="black", fg='white').grid(row=5, column=3)
+OJingred = Label(menuframe,text='Jugo de Naranja',bg="black", fg='white').grid(row=5, column=3)
 
-settingsbutton = Button(text = 'Settings', height=2, width=10, command = settingsmenu).place(x=900,y=14)
-exitbutton = Button(text='Quit', height=2, width=10, command=Quit).place(x=900,y=588)
+settingsbutton = Button(text = 'Opciones', height=2, width=10, command = settingsmenu).pack(side='right')
+exitbutton = Button(text='No precionar', height=2, width=10, command=Quit).pack(side='right')
 
 dgui.mainloop()
