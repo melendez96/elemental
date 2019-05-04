@@ -12,12 +12,11 @@
 	"pump_3": {
 		"name": "Pump 3",
 		"pin": 22, 
-		"value": null
+		"value": "gin"
 	},
 	"pump_4": {
-		"name": "Pump 4",
-		"pin": 23, 
-		"value": null
+		"name": "Pump 4","pin": 23,
+		"value": "oj"	    
 	},
 	"pump_5": {
 		"name": "Pump 5",
