@@ -15,7 +15,7 @@ from drinks import drink_list, drink_options
 
 GPIO.setmode(GPIO.BCM)
 
-FLOW_RATE = 600.0/1000.0
+FLOW_RATE = 0.6
 
 class Bartender(): 
         def __init__(self):

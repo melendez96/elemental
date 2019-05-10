@@ -37,8 +37,8 @@ drink_list = [
 	}, {
 		"name": "Gin & Juice",
 		"ingredients": {
-			"gin": 5,
-			"oj": 30
+			"gin": 100,
+			"oj": 5
 		}
 	}, {
 		"name": "Tequila Sunrise",
