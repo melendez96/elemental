@@ -2,51 +2,51 @@
 	"pump_1": {
 		"name": "Pump 1",
 		"pin": 17, 
-		"value": "coke"
+		"value": "ron blanco"
 	},
 	"pump_2": {
 		"name": "Pump 2",
 		"pin": 27, 
-		"value": "rum"
+		"value": "gin"
 	},
 	"pump_3": {
 		"name": "Pump 3",
 		"pin": 22, 
-		"value": "gin"
+		"value": "kahlua"
 	},
 	"pump_4": {
 		"name": "Pump 4",
                 "pin": 23,
-		"value": "oj"	    
+		"value": "tequila"	    
 	},
 	"pump_5": {
 		"name": "Pump 5",
 		"pin": 24, 
-		"value": null
+		"value": "vodka"
 	},
 	"pump_6": {
 		"name": "Pump 6",
 		"pin": 25, 
-		"value": null
+		"value": "lemonade"
 	},
         "pump_7": {
 		"name": "Pump 7",
 		"pin": 26, 
-		"value": null
+		"value": "tea"
 	},
         "pump_8": {
 		"name": "Pump 8",
 		"pin": 19, 
-		"value": null
+		"value": "agua mineral"
 	},
         "pump_9": {
 		"name": "Pump 9",
 		"pin": 16, 
-		"value": null
+		"value": "coke"
 	},
         "pump_10": {
 		"name": "Pump 10",
 		"pin": 20, 
-		"value": null
+		"value": "water"
 	}
 }
